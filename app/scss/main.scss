@@ -1,0 +1,71 @@
+@import './partials/variabels';
+@import './partials/general';
+header{
+    background: url(/images/bg-mobile-dark.jpg) no-repeat;
+    background-size:cover ;
+    height: 40vh;
+    position:relative;
+    padding: 1rem;
+}
+// navigation
+.nav{
+    &__heading{
+        color: white;
+    }
+    display: flex;
+    justify-content: space-between;
+}
+// hero
+ .hero{
+     margin-top: 2rem;
+     position: absolute;
+     margin-inline: auto;
+     left: 0;
+     right: 0;
+     padding: 7px;
+     border-radius: 10px;
+     &__newTodo{
+         margin: 1rem;
+         background-color:$Very-Dark-Desaturated-Blue;
+         display: flex;
+         border-radius: 6px;
+         padding: 12px;
+         input{
+         background-color: transparent;
+         border: 0;
+         outline: none;
+         font-size: inherit;
+          font-weight: bold;
+          padding-left: 6px;
+         }
+         .newTodo-circle{
+             cursor: pointer;
+             margin-bottom: 2px;
+             display: inline-block;
+             margin-inline: 7px 5px;
+             height: 1.7rem;
+             width: 1.7rem;
+             border-radius: 50%;
+             border: 1px solid $Very-Dark-Grayish-Blue;
+             
+         }
+    }
+    // tasks
+    .taskContainer{
+        display: flex;
+        justify-content: space-between;
+        padding: 13px;
+        .clear{
+            cursor: pointer;
+            transition: color 0.5s;
+            &:hover{
+                color:$Light-Grayish-Blue-hover;
+            }
+        }
+    }
+ }
+// main
+.todoContainerBg{
+    background-color: $Very-Dark-Blue;
+    height: 30vh;
+}
