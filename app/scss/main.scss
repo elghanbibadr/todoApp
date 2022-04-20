@@ -4,22 +4,43 @@ header{
     background: url(/images/bg-mobile-dark.jpg) no-repeat;
     background-size:cover ;
     padding: 1rem;
+    @include desktop{
+        background: url(/images/bg-desktop-dark.jpg) no-repeat;
+
+    }
+}
+.changeheaderBg{
+    background: url(/images/bg-mobile-light.jpg) no-repeat;
+    background-size:cover ;
+    @include desktop{
+        background: url(/images/bg-desktop-light.jpg) no-repeat;
+    }
 }
 // navigation
 .nav{
     padding: 2rem;
     &__heading{
         color: white;
-
+        letter-spacing: 5px;
+    }
+    &__toggler{
+        height: 1.8rem;
+        cursor: pointer;
+    }
+    .hide{
+        display: none;
     }
     display: flex;
     justify-content: space-between;
+    @include desktop{
+        justify-content: space-around;
+    }
 }
 // hero
  .hero{
      margin-top: 2rem;
      &__newTodo{
-          width: 86% !important;
+        //   width: 86% !important;
          input{
          background-color: transparent;
          border: 0;
@@ -57,7 +78,8 @@ header{
 // main
 main{
     background-color: $Very-Dark-Blue;
-     height: 30vh;
+     height: 50vh;
+     padding-inline: 1rem;
     
 }
 // general styles for every new container
@@ -70,13 +92,15 @@ main{
     border-radius: 6px;
     padding: 16px;
     font-size: 12px;
-  
+  @include desktop{
+      width: 50%;
+  }
 }
 .col--sb{
     justify-content: space-between;
 }
 .col-added{
-    border-bottom: 1px solid $Light-Grayish-Blue;
+    border-bottom: 1px solid $Very-Dark-Grayish-Blue;
     border-radius: 0;
     &::after{
         content:url(/images/icon-cross.svg);
@@ -99,4 +123,7 @@ ul{
         padding-top: 0.5rem !important;
         margin-left: 5px;
     }
+}
+.clearTodos{
+    border-radius:  0 0 6px 6px;
 }
