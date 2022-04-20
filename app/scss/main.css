@@ -29,12 +29,11 @@ a {
 header {
   background: url(/images/bg-mobile-dark.jpg) no-repeat;
   background-size: cover;
-  height: 40vh;
-  position: relative;
   padding: 1rem;
 }
 
 .nav {
+  padding: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,34 +48,30 @@ header {
 
 .hero {
   margin-top: 2rem;
-  position: absolute;
-  margin-inline: auto;
-  left: 0;
-  right: 0;
-  padding: 7px;
-  border-radius: 10px;
 }
 
 .hero__newTodo {
-  margin: 1rem;
-  background-color: #25273c;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border-radius: 6px;
-  padding: 12px;
+  width: 86% !important;
 }
 
 .hero__newTodo input {
   background-color: transparent;
   border: 0;
   outline: none;
-  font-size: inherit;
-  font-weight: bold;
   padding-left: 6px;
+  font-family: inherit;
 }
 
-.hero__newTodo .newTodo-circle {
+.hero__newTodo input[type=text] {
+  color: #cacde8;
+}
+
+.circleBefore {
+  position: relative;
+}
+
+.circleBefore::before {
+  content: '';
   cursor: pointer;
   margin-bottom: 2px;
   display: inline-block;
@@ -85,30 +80,64 @@ header {
   width: 1.7rem;
   border-radius: 50%;
   border: 1px solid #393a4c;
+  -webkit-transition: border 1s ease;
+  transition: border 1s ease;
 }
 
-.hero .taskContainer {
+.circleBefore:hover::before {
+  border: 1px solid #ccc;
+}
+
+main {
+  background-color: #161722;
+  height: 30vh;
+}
+
+.col {
+  width: 80%;
+  margin-inline: auto;
+  border-radius: 10px;
+  background-color: #25273c;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  border-radius: 6px;
+  padding: 16px;
+  font-size: 12px;
+}
+
+.col--sb {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 13px;
 }
 
-.hero .taskContainer .clear {
+.col-added {
+  border-bottom: 1px solid #cacde8;
+  border-radius: 0;
+}
+
+.col-added::after {
+  content: url(/images/icon-cross.svg);
   cursor: pointer;
-  -webkit-transition: color 0.5s;
-  transition: color 0.5s;
+  position: absolute;
+  right: 1rem;
+  -webkit-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+  margin-top: 0.4rem;
+  opacity: 0;
 }
 
-.hero .taskContainer .clear:hover {
-  color: #e4e5f1;
+.showCheck::after {
+  opacity: 1;
 }
 
-.todoContainerBg {
-  background-color: #161722;
-  height: 30vh;
+p {
+  color: #cacde8;
+}
+
+ul li p {
+  padding-top: 0.5rem !important;
+  margin-left: 5px;
 }
 /*# sourceMappingURL=main.css.map */

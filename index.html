@@ -18,21 +18,24 @@
       <img src="/images/icon-sun.svg" alt="an image of a brighter lamp" class="nav__toggler">
     </div>
     <div class="hero">
-      <div class="hero__newTodo">
-        <span class="newTodo-circle"></span>
+      <div class="hero__newTodo col circleBefore">
          <input type="text" placeholder="Create a new Todo...">
       </div>
-      <!--container of todos  -->
-      <div class="hero__newTodo taskContainer ">
-        <p class="DefaultText"> <span class="leftItem">0</span>  item left</p>
-        <p class="clear">Clear Completed</p>
       </div>
-    </div>
   </header>
   <main>
-    <div class="todoContainerBg">
-
+    <div class="todoContainer">
+      <!-- list of added todos -->
+      <ul class="todos">
+      </ul>
+      <!-- clear todos -->
+      <div class="clearTodos col col--sb">
+        <p class="items-left"><span class="item-left-number">0</span> items(s) let</p>
+        <p class="completed">Clear Completed </p>
+      </div>
     </div>
   </main>
+  <!-- javascript -->
+  <script src="/app/app.js"></script>
 </body>
 </html>
