@@ -36,3 +36,8 @@ addTodo.addEventListener('keyup',(e)=>{
          e.target.previousElementSibling.classList.toggle('hide') 
      }
  }))
+//      console.log(getComputedStyle(e.target,'::after').getPropertyValue('content'));
+  todosList.addEventListener('click',(e)=>{
+    // console.log(getComputedStyle(e.target,'::after').getPropertyValue('content'))
+    console.log(e.target.window.offsetX)
+  })

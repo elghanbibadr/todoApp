@@ -58,7 +58,7 @@ header{
  .circleBefore{
      position: relative;
      &::before{
-         content: '';
+         content:'';
          cursor: pointer;
          margin-bottom: 2px;
          display: inline-block;
