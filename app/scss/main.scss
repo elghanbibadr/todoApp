@@ -78,13 +78,13 @@ header{
 // main
 main{
     background-color: $Very-Dark-Blue;
-     height: 50vh;
+      height: 90vh;
      padding-inline: 1rem;
     
 }
 // general styles for every new container
 .col{
-    width: 80%;
+    width: 90%;
     margin-inline: auto;
     border-radius: 10px;
     background-color:$Very-Dark-Desaturated-Blue;
@@ -102,15 +102,8 @@ main{
 .col-added{
     border-bottom: 1px solid $Very-Dark-Grayish-Blue;
     border-radius: 0;
-    &::after{
-        content:url(/images/icon-cross.svg);
-        cursor: pointer;
-        position: absolute;
-        right: 1rem;
-        transition: opacity 1s ease;
-        margin-top: 0.4rem;
-        opacity: 0;
-    }    
+    position: relative;
+    
 }
 .showCheck::after{
     opacity: 1;
@@ -126,4 +119,65 @@ ul{
 }
 .clearTodos{
     border-radius:  0 0 6px 6px;
+}
+// check
+  .check{
+          content:url(/images/icon-cross.svg);
+          cursor: pointer;
+          position: absolute;
+          right: 1rem;
+          transition: opacity 1s ease;
+          margin-top: 0.4rem;
+          opacity: 1;
+      }   
+ .showCheck{
+      opacity: 1;
+      }
+
+    //   circle
+.circle{
+    content:'';
+    cursor: pointer;
+    position: relative;
+    left:-0.5rem ;
+    margin-bottom: 2px;
+    display: inline-block;
+      margin-inline: 7px 15px;
+    height: 1.7rem;
+    width: 1.7rem;
+    position: relative;
+    border-radius: 50%;
+    border: 1px solid $Very-Dark-Grayish-Blue;
+    transition: border 0.3s ease;
+    &:hover{
+        border: 1px solid #ccc;
+    }
+}
+// change cirlce bg
+.bg{
+    background-image: url(/images/icon-check.svg),linear-gradient(hsl(192, 100%, 67%),hsl(280, 87%, 65%));
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.taskRemove{
+    text-decoration: line-through;
+}
+// fix position 
+.fixPosition{
+    position: absolute;
+    left: 3rem;
+}
+.completed,.all,.active,.clear-completed{
+    transition: color 0.6s ease;
+    cursor: pointer;
+    &:hover{
+        color:hsl(210, 1%, 58%);
+    }
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
 }

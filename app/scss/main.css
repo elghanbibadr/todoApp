@@ -120,12 +120,12 @@ header {
 
 main {
   background-color: #161722;
-  height: 50vh;
+  height: 90vh;
   padding-inline: 1rem;
 }
 
 .col {
-  width: 80%;
+  width: 90%;
   margin-inline: auto;
   border-radius: 10px;
   background-color: #25273c;
@@ -152,17 +152,7 @@ main {
 .col-added {
   border-bottom: 1px solid #393a4c;
   border-radius: 0;
-}
-
-.col-added::after {
-  content: url(/images/icon-cross.svg);
-  cursor: pointer;
-  position: absolute;
-  right: 1rem;
-  -webkit-transition: opacity 1s ease;
-  transition: opacity 1s ease;
-  margin-top: 0.4rem;
-  opacity: 0;
+  position: relative;
 }
 
 .showCheck::after {
@@ -180,5 +170,75 @@ ul li p {
 
 .clearTodos {
   border-radius: 0 0 6px 6px;
+}
+
+.check {
+  content: url(/images/icon-cross.svg);
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  -webkit-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+  margin-top: 0.4rem;
+  opacity: 1;
+}
+
+.showCheck {
+  opacity: 1;
+}
+
+.circle {
+  content: '';
+  cursor: pointer;
+  position: relative;
+  left: -0.5rem;
+  margin-bottom: 2px;
+  display: inline-block;
+  margin-inline: 7px 15px;
+  height: 1.7rem;
+  width: 1.7rem;
+  position: relative;
+  border-radius: 50%;
+  border: 1px solid #393a4c;
+  -webkit-transition: border 0.3s ease;
+  transition: border 0.3s ease;
+}
+
+.circle:hover {
+  border: 1px solid #ccc;
+}
+
+.bg {
+  background-image: url(/images/icon-check.svg), -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
+  background-image: url(/images/icon-check.svg), linear-gradient(#57ddff, #c058f3);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.taskRemove {
+  text-decoration: line-through;
+}
+
+.fixPosition {
+  position: absolute;
+  left: 3rem;
+}
+
+.completed, .all, .active, .clear-completed {
+  -webkit-transition: color 0.6s ease;
+  transition: color 0.6s ease;
+  cursor: pointer;
+}
+
+.completed:hover, .all:hover, .active:hover, .clear-completed:hover {
+  color: #939495;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */
