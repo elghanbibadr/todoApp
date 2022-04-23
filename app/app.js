@@ -6,6 +6,10 @@ const active=document.querySelector('.active');
 const all=active.previousElementSibling;
 const completed=active.nextElementSibling;
 const clearCompleted=completed.nextElementSibling;
+let main= document.querySelector('main');
+let addedCol=document.querySelectorAll('.col');
+let img=document.querySelectorAll('img');
+let newCols=todosList.querySelectorAll('col-added');
 
 // add new task when press the enter keyword
 addTodo.addEventListener('keydown',(e)=>{
@@ -21,8 +25,11 @@ addTodo.addEventListener('keydown',(e)=>{
         // add the li 
      let task=document.createElement('li');
      task.innerHTML= `<p>${addTodo.firstElementChild.value}</p>`;
-      task.classList.add('col');
+      task.classList.add('col');     
       task.firstChild.classList.add('fixPosition');
+
+      if (img[0].classList.contains('hide'))task.classList.toggle('clsLight');
+
       task.classList.add('col-added');
       todosList.append(task);
       task.append(circle);
@@ -30,8 +37,10 @@ addTodo.addEventListener('keydown',(e)=>{
     //  increase number of item added
     numberOfItems.textContent++;
     }
+
 });
 
+// document.querySelectorAll('.col').forEach(cls=>cls.classList.add('clsLight'));
 
 
 // Update the value of input to default when adding new task
@@ -42,13 +51,15 @@ addTodo.addEventListener('keyup',(e)=>(e.key==='Enter')?addTodo.firstElementChil
 
 // change the toggler
  togglers.forEach(toggler=>toggler.addEventListener('click',(e)=>{
-     document.querySelector('header').classList.toggle('changeheaderBg')
+     document.querySelector('header').classList.toggle('changeheaderBg');
+     main.classList.toggle('bgWhite');
      e.target.classList.toggle('hide');
+     document.querySelectorAll('.col').forEach(li=>li.classList.toggle('clsLight'))
      if (!e.target.classList.contains('moon')){
         e.target.nextElementSibling.classList.toggle('hide');
      }
      else{
-         e.target.previousElementSibling.classList.toggle('hide') 
+         e.target.previousElementSibling.classList.toggle('hide') ;
      }
  }))
 
@@ -108,3 +119,4 @@ clearCompleted.addEventListener('click',()=>{
        }
     })
 })
+

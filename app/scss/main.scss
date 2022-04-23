@@ -40,13 +40,13 @@ header{
  .hero{
      margin-top: 2rem;
      &__newTodo{
-        //   width: 86% !important;
          input{
          background-color: transparent;
          border: 0;
          outline: none;
           padding-left: 6px;
           font-family: inherit;
+          font-size: 11px;
         }
         input[type=text]{
           color:$Light-Grayish-Blue;
@@ -66,7 +66,7 @@ header{
          height: 1.7rem;
          width: 1.7rem;
          border-radius: 50%;
-         border: 1px solid $Very-Dark-Grayish-Blue;
+         border: 1px solid $Light-Grayish-Blue;
          transition: border 1s ease;
      }
      &:hover::before{
@@ -87,7 +87,7 @@ main{
     width: 90%;
     margin-inline: auto;
     border-radius: 10px;
-    background-color:$Very-Dark-Desaturated-Blue;
+     background-color:$Very-Dark-Desaturated-Blue;
     display: flex;
     border-radius: 6px;
     padding: 16px;
@@ -105,9 +105,7 @@ main{
     position: relative;
     
 }
-.showCheck::after{
-    opacity: 1;
-}
+
 p{
   color:  $Light-Grayish-Blue;
 }
@@ -130,10 +128,7 @@ ul{
           margin-top: 0.4rem;
           opacity: 1;
       }   
- .showCheck{
-      opacity: 1;
-      }
-
+ 
     //   circle
 .circle{
     content:'';
@@ -147,11 +142,9 @@ ul{
     width: 1.7rem;
     position: relative;
     border-radius: 50%;
-    border: 1px solid $Very-Dark-Grayish-Blue;
+    border: 1px solid $Light-Grayish-Blue;
     transition: border 0.3s ease;
-    &:hover{
-        border: 1px solid #ccc;
-    }
+ 
 }
 // change cirlce bg
 .bg{
@@ -180,4 +173,17 @@ ul{
 }
 .hide{
     display: none;
+}
+
+// Change color
+.bgWhite{
+    background-color: hsl(0, 0%, 98%);
+}
+.clsLight{
+    background-color:hsl(0, 0%, 98%);
+     border: 0.1px solid hsl(233,11%,84%);
+     p{
+
+         color: hsl(210, 1%, 58%);
+     }
 }

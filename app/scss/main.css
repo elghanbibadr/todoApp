@@ -90,6 +90,7 @@ header {
   outline: none;
   padding-left: 6px;
   font-family: inherit;
+  font-size: 11px;
 }
 
 .hero__newTodo input[type=text] {
@@ -109,7 +110,7 @@ header {
   height: 1.7rem;
   width: 1.7rem;
   border-radius: 50%;
-  border: 1px solid #393a4c;
+  border: 1px solid #cacde8;
   -webkit-transition: border 1s ease;
   transition: border 1s ease;
 }
@@ -155,10 +156,6 @@ main {
   position: relative;
 }
 
-.showCheck::after {
-  opacity: 1;
-}
-
 p {
   color: #cacde8;
 }
@@ -183,10 +180,6 @@ ul li p {
   opacity: 1;
 }
 
-.showCheck {
-  opacity: 1;
-}
-
 .circle {
   content: '';
   cursor: pointer;
@@ -199,13 +192,9 @@ ul li p {
   width: 1.7rem;
   position: relative;
   border-radius: 50%;
-  border: 1px solid #393a4c;
+  border: 1px solid #cacde8;
   -webkit-transition: border 0.3s ease;
   transition: border 0.3s ease;
-}
-
-.circle:hover {
-  border: 1px solid #ccc;
 }
 
 .bg {
@@ -240,5 +229,18 @@ ul li p {
 
 .hide {
   display: none;
+}
+
+.bgWhite {
+  background-color: #fafafa;
+}
+
+.clsLight {
+  background-color: #fafafa;
+  border: 0.1px solid #d2d3db;
+}
+
+.clsLight p {
+  color: #939495;
 }
 /*# sourceMappingURL=main.css.map */
