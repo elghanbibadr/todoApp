@@ -91,6 +91,7 @@ main{
     display: flex;
     border-radius: 6px;
     padding: 16px;
+    cursor: pointer;
     font-size: 12px;
   @include desktop{
       width: 50%;
@@ -103,6 +104,7 @@ main{
     border-bottom: 1px solid $Very-Dark-Grayish-Blue;
     border-radius: 0;
     position: relative;
+    cursor: pointer;
     
 }
 
