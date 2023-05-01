@@ -11,37 +11,81 @@ let addedCol=document.querySelectorAll('.col');
 let img=document.querySelectorAll('img');
 let newCols=todosList.querySelectorAll('col-added');
 
+
+
+
+// grab todos from local storage
+function getTodosFromLocalStorage() {
+    const todos = localStorage.getItem("todos");
+  
+    if (todos) {
+      return JSON.parse(todos);
+    } else {
+      return [];
+    }
+  }
+window.addEventListener("load", function () {
+    const todos = getTodosFromLocalStorage();
+    console.log(todos)
+    todos.map((todo)=>{
+    addNewTodo(todo)
+})
+  });
 // add new task when press the enter keyword
 addTodo.addEventListener('keydown',(e)=>{
     if (e.key==='Enter' && addTodo.firstElementChild.value){
-        // add the circle
-        let circle=document.createElement('span');
-        circle.innerHTML='<span></span>';
-        circle.classList.add('circle');
-        // add the check
-        let check=document.createElement('span');
-        check.innerHTML='<span></span>';
-        check.classList.add('check');
-        // add the li 
-     let task=document.createElement('li');
-     task.innerHTML= `<p>${addTodo.firstElementChild.value}</p>`;
-      task.classList.add('col');     
-      task.firstChild.classList.add('fixPosition');
+       addNewTodo(addTodo.firstElementChild.value)
+}});
 
-      if (img[0].classList.contains('hide'))task.classList.toggle('clsLight');
 
-      task.classList.add('col-added');
-      todosList.append(task);
-      task.append(circle);
-      task.append(check)
-    //  increase number of item added
-    numberOfItems.textContent++;
+// add todo fuction
+const addNewTodo=(todoTitle)=>{
+// add the circle
+    let circle=document.createElement('span');
+    circle.innerHTML='<span></span>';
+    circle.classList.add('circle');
+    // add the check
+    let check=document.createElement('span');
+    check.innerHTML='<span></span>';
+    check.classList.add('check');
+    // add the li 
+   let task=document.createElement('li');
+   task.innerHTML= `<p>${todoTitle}</p>`;
+   task.classList.add('col');     
+   task.firstChild.classList.add('fixPosition');
+     saveTodoToLocalStorage(todoTitle)
+   if (img[0].classList.contains('hide'))task.classList.toggle('clsLight');
+   
+   task.classList.add('col-added');
+   todosList.append(task);
+   task.append(circle);
+   task.append(check)
+   //  increase number of item added
+   numberOfItems.textContent++;
+   }
+
+
+
+// save todo to local storage
+function saveTodoToLocalStorage(todo) {
+  
+    // Get the existing todos from local storage
+    const existingTodos = localStorage.getItem("todos") || [];
+   console.log(existingTodos)
+    if (existingTodos) {
+      // Parse the existing todos from a JSON string to an array
+     const todos = existingTodos.length===0 ? []: JSON.parse(existingTodos)  ;
+     console.log(todos)
+     if (todos.some(item=>item===todo))return
+      todos.push(todo);
+      console.log(todos)
+      localStorage.setItem("todos", JSON.stringify(todos));
     }
-
-});
-
-// document.querySelectorAll('.col').forEach(cls=>cls.classList.add('clsLight'));
-
+  
+    // Add the new todo to the array
+  
+    // Convert the todos array to a JSON string and save it to local storage
+  }
 
 // Update the value of input to default when adding new task
 
