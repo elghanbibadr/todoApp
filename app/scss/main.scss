@@ -5,15 +5,17 @@ header{
     background-size:cover ;
     padding: 1rem;
     @include desktop{
-        background: url(/images/bg-desktop-dark.jpg) no-repeat;
-
+        background: url(/images/bg-desktop-dark.jpg) ;
+            background-size: cover;
     }
 }
 .changeheaderBg{
     background: url(/images/bg-mobile-light.jpg) no-repeat;
     background-size:cover ;
     @include desktop{
-        background: url(/images/bg-desktop-light.jpg) no-repeat;
+        background: url(/images/bg-desktop-light.jpg) ;
+        background-size: cover;
+
     }
 }
 // navigation
