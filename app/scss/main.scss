@@ -48,7 +48,11 @@ header{
          outline: none;
           padding-left: 6px;
           font-family: inherit;
-          font-size: 11px;
+          font-size: 0.7rem;
+          width: 100%;
+          @include desktop{
+            font-size: 1rem;
+          }
         }
         input[type=text]{
           color:$Light-Grayish-Blue;
@@ -94,8 +98,9 @@ main{
     border-radius: 6px;
     padding: 16px;
     cursor: pointer;
-    font-size: 12px;
-  @include desktop{
+    font-size: 0.7rem;
+    @include desktop{
+      font-size: 1rem;
       width: 50%;
   }
 }

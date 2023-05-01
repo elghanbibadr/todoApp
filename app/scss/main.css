@@ -92,7 +92,14 @@ header {
   outline: none;
   padding-left: 6px;
   font-family: inherit;
-  font-size: 11px;
+  font-size: 0.7rem;
+  width: 100%;
+}
+
+@media (min-width: 800px) {
+  .hero__newTodo input {
+    font-size: 1rem;
+  }
 }
 
 .hero__newTodo input[type=text] {
@@ -138,11 +145,12 @@ main {
   border-radius: 6px;
   padding: 16px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 0.7rem;
 }
 
 @media (min-width: 800px) {
   .col {
+    font-size: 1rem;
     width: 50%;
   }
 }
