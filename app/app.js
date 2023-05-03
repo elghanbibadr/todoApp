@@ -71,20 +71,15 @@ function saveTodoToLocalStorage(todo) {
   
     // Get the existing todos from local storage
     const existingTodos = localStorage.getItem("todos") || [];
-   console.log(existingTodos)
     if (existingTodos) {
       // Parse the existing todos from a JSON string to an array
      const todos = existingTodos.length===0 ? []: JSON.parse(existingTodos)  ;
-     console.log(todos)
      if (todos.some(item=>item===todo))return
       todos.push(todo);
       console.log(todos)
       localStorage.setItem("todos", JSON.stringify(todos));
     }
-  
-    // Add the new todo to the array
-  
-    // Convert the todos array to a JSON string and save it to local storage
+ 
   }
 
 // Update the value of input to default when adding new task
@@ -120,7 +115,17 @@ todosList.addEventListener('click',(e)=>{
 
 todosList.addEventListener('click',(e)=>{
    if (e.target.classList.contains('check')){
-    e.target.parentElement.remove();
+    e.target.parentElement.remove(); 
+    const deletedTodo=e.target.parentElement.querySelector('p').textContent
+    const todos = localStorage.getItem("todos");
+        
+    const parsedTodos= JSON.parse(todos)
+     parsedTodos.splice(parsedTodos.indexOf(deletedTodo),1)
+     
+  
+    console.log(typeof parsedTodos)
+    localStorage.setItem("todos", JSON.stringify(parsedTodos));
+
     (e.target.previousElementSibling.classList.contains('bg'))?'':numberOfItems.textContent--;
    }
 })
