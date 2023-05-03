@@ -28,7 +28,7 @@ window.addEventListener("load", function () {
     const todos = getTodosFromLocalStorage();
     console.log(todos)
     todos.map((todo)=>{
-    addNewTodo(todo)
+    addNewTodo(todo.task)
 })
   });
 // add new task when press the enter keyword
@@ -74,8 +74,7 @@ function saveTodoToLocalStorage(todo) {
     if (existingTodos) {
       // Parse the existing todos from a JSON string to an array
      const todos = existingTodos.length===0 ? []: JSON.parse(existingTodos)  ;
-     if (todos.some(item=>item===todo))return
-      todos.push(todo);
+      todos.push({task:todo,completed:false});
       console.log(todos)
       localStorage.setItem("todos", JSON.stringify(todos));
     }
@@ -123,7 +122,6 @@ todosList.addEventListener('click',(e)=>{
      parsedTodos.splice(parsedTodos.indexOf(deletedTodo),1)
      
   
-    console.log(typeof parsedTodos)
     localStorage.setItem("todos", JSON.stringify(parsedTodos));
 
     (e.target.previousElementSibling.classList.contains('bg'))?'':numberOfItems.textContent--;
